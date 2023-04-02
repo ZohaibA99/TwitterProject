@@ -9,15 +9,12 @@ app.use(express.static('public'));
 
 const port = 3000;
 
-let tweets = []; //-- an array that would have held tweets
-//using mysql database twitter instead. (look at db.js)
-
  
 
 //CRUD methods for twitter application                  
 app.get(
     '/tweets',
-    (req, res) => {//res.send(JSON.stringify(tweets));
+    (req, res) => {
          connection.query('SELECT * FROM tweet ',
          (error, results, fields) => {
             if (error){
@@ -35,7 +32,6 @@ app.post(
     (req, res) => {
         const text = req.body.text;
         console.log(text);
-        //tweets.push(text);  //pushes data to tweets array
         
         const tweet = {
             tweet_text: text,
@@ -43,7 +39,7 @@ app.post(
         };
 
         connection.query('INSERT INTO tweet SET ?',
-                        tweet, (error, results, fields) => {
+                        tweet, (error, results, data) => {
                             if (error){
                                 console.log(error.message);
                                 
@@ -59,15 +55,30 @@ app.post(
 app.put(
     '/tweets',
     (req, res) => {
-        res.send('put hello world')
+        const text = req.body.text;
+        console.log(text);
+        const tweetId = Number(req.body.id);
+        console.log(tweetId);
+
+        connection.query('UPDATE tweet SET tweet_text = ? WHERE tweet_id = ?',
+        [text, tweetId], (error, response, data) => {
+            if(error){
+                console.log(error.message);
+            }else{
+                console.log(`updated tweet: ${tweetId}`);
+            }
+        })
+
+
+        res.send(`put tweet: ${text}`);
     }
 );
 
 
 app.delete(
-    '/tweets/:id',
+    '/tweets',
     (req, res) => {
-        const tweetId = Number(req.params.id);
+        const tweetId = Number(req.body.id);
         connection.query('DELETE FROM tweet WHERE tweet_id = ?',
         tweetId,
         (error, results, data) => {
