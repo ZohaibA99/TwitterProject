@@ -8,6 +8,12 @@
 <body>
     <div id="tweets"></div>
 
+    <form id="tweet-edit-form" onsubmit="return false;" style="visibility: hidden;">
+        <input type="text" name="tweet-edit-tweetNumber" id="tweet-edit-tweetNumber" placeholder="what tweet number would you like to edit">
+        <input type="text" name="tweet-edit-tweet" id="tweet-edit-tweet" placeholder="Whats happening?">
+        <button class='tweet-edit-bttn' type="submit">Update Tweet</button>
+    </form>
+
     <form id="tweet-form" onsubmit="return false;">
         <input type="text" name="tweet" id="tweet" placeholder="Whats happening?">
         <button type="submit">Tweet</button>

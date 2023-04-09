@@ -34,6 +34,18 @@ const getTweets = () =>{
                     }))
                 });
                 tweetDiv.append(tweetDeleteBttn);
+
+                const tweetEdit = document.createElement('button');
+                tweetEdit.setAttribute('class', 'tweet-edit-button');
+                tweetEdit.setAttribute('id', tweet.tweet_id);
+                tweetEdit.innerHTML = 'Edit';
+                tweetEdit.onclick = ' ';
+                tweetEdit.addEventListener('click', event => {
+                    event.preventDefault();
+                    const elementVis = document.getElementById('tweet-edit-form');
+                    elementVis.setAttribute('style', 'visibility: visible');
+                })
+                tweetDiv.append(tweetEdit);
             });
         });
 }
@@ -50,6 +62,26 @@ tweetForm.addEventListener('submit', event => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({text: text})
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        getTweets();
+    });
+});
+
+const tweetEditForm = document.getElementById('tweet-edit-form');
+tweetEditForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const text = document.getElementById('tweet-edit-tweet').value;
+    const tweetId = document.getElementById("tweet-edit-tweetNumber").value;
+
+    fetch('/tweets', {
+        method: 'PUT',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({text: text, id: tweetId})
     })
     .then(response => response.json())
     .then(data => {
