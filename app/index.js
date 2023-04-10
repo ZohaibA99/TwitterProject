@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 //server port
-const port = 3000;
+const port = 3306;
 
 
 //CRUD methods for twitter application                  

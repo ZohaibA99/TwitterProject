@@ -4,11 +4,11 @@ const Sequelize = require('sequelize');
 
 //connection to database
 const sequelize = new Sequelize (
-    'twitter', //database
-    'root', //username
-    '', //pass
+    'sql9612185', //database
+    'sql9612185', //username
+    'sF6ISTd3tm', //pass
     {
-        host: 'localhost',
+        host: 'sql9.freemysqlhosting.net',
         dialect: 'mysql'
     }
 
