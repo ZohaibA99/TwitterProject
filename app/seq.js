@@ -1,6 +1,7 @@
 //using sequelize
-
-const Sequelize = require('sequelize');
+import { Sequelize} from "sequelize";
+import {mysql2} from "mysql2";
+//const Sequelize = require('sequelize');
 
 //connection to database
 const sequelize = new Sequelize (
@@ -10,7 +11,7 @@ const sequelize = new Sequelize (
     {
         host: 'sql9.freemysqlhosting.net',
         dialect: 'mysql',
-        dialectModule: require("mysql2"),
+        dialectModule: mysql2,
     }
 
 );
