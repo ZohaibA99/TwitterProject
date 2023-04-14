@@ -173,3 +173,4 @@ app.listen(
     () => console.log(`example app listeingin on localhost: ${port}`)
 );
 
+module.exports = app;
