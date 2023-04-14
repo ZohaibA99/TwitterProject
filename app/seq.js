@@ -1,5 +1,5 @@
 //using sequelize
-import { Sequelize} from "sequelize";
+import {Sequelize} from "sequelize";
 import {mysql2} from "mysql2";
 //const Sequelize = require('sequelize');
 
