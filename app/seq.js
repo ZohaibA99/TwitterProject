@@ -9,8 +9,7 @@ const sequelize = new Sequelize (
     'sF6ISTd3tm', //pass
     {
         host: 'sql9.freemysqlhosting.net',
-        dialect: 'mysql',
-        dialectModule: require('mysql2'),
+        dialect: 'mysql'
     }
 
 );
