@@ -12,7 +12,7 @@ const bodyParser = require('body-parser');
 // const connection = require('./db');
 
 //sequlize file
-const Tweet = require('./seq');
+const Tweet = require('./app/seq');
 
 //initiate server app set up environment
 const app = express();
