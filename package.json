@@ -1,0 +1,28 @@
+{
+  "name": "twitter-project",
+  "version": "1.0.0",
+  "description": "Basic project utilizing node, express, mysql, and frontend development to post and retrieve tweets from a database.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZohaibA99/TwitterProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZohaibA99/TwitterProject/issues"
+  },
+  "homepage": "https://github.com/ZohaibA99/TwitterProject#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.2.1",
+    "sequelize": "^6.31.0"
+  }
+}
