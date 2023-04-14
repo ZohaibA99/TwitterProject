@@ -2,7 +2,7 @@
     "version" : 2,
     "builds": [
         {
-            "src": "index.js",
+            "src": "app/index.js",
             "use": "@now/node"
         }
     ],
@@ -13,7 +13,7 @@
         },
         {
             "src": "tweets",
-            "dest": "index.js"
+            "dest": "app/index.js"
         }
     ]
   }
